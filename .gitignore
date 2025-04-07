@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+
+# rust
+/target/
+**/*.rs.bk
+Cargo.lock
+.cargo/
+
+# backup files
+*.swp
+*.bak
+*.tmp
+*.old
+
