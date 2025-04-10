@@ -1,7 +1,13 @@
+"""
+A minimal and jovial implementation of Hello, world!.
+"""
+import random
+import sys
+
 
 # use ISO 639 codes as keys
 # https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
-greetings = {
+languages_we_understand = {
     "en": "Hello, world!",
     "el": "Γειά σου, κόσμε!",
     "gd": "Halò, a shaoghail!",
@@ -11,20 +17,41 @@ greetings = {
 }
 
 
-def greeting(iso_639_1_code):
+def greeting(iso_639_1_code: str) -> str:
     """Returns a greeting string"""
-    # let's just try and return the target language
+    # let's just try and return the target language.
+    # However, if we don't have that language, then
+    # in true English fashion, if we cannot understand
+    # the language because we don't speak it, then we
+    # shout the English version back and hope that volume
+    # solves the translation issue.
     try:
-        return greetings[iso_639_1_code]
+        return languages_we_understand[iso_639_1_code]
     except KeyError:
-        # in true english fashion, just shout the 
-        # english version back and hope that volume
-        # solves the translation issue.
-        return greetings["en"].UPPER()
+        return languages_we_understand["en"].upper()
 
 
-def speak():
-    print(greeting())
+def speak(code: str | None = None) -> None:
+    """Prints a greeting in a given language. 
+    If no language code is provided, then a random language is selected."""
+
+    # get a random code if we don't have one
+    if not code:
+        code = random.choice(
+            list(languages_we_understand.keys())
+        )
+    
+    # if we have a code, make sure we understand it
+    if code not in languages_we_understand:
+        raise ValueError(f"Unsupported language code: '{code}'")
+
+    # done, print it out.
+    print(greeting(code))
+
 
 if __name__ == "__main__":
-    speak()
+    # accept a command line code
+    code = sys.argv[1] if len(sys.argv) > 1 else None
+
+    # speak
+    speak(code)

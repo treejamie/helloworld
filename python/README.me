@@ -8,7 +8,20 @@ There's no real project structure and it's mostly up to the user and readme to g
 
 #### Requirements
 
-You will need to have python installed in order to run this.
+You will need to have python installed in order to run this. If you don't want to setup a virtual environment,
+you don't have to. But if you want the joy of iPython, then you probably should.
+
+#### Setup
+
+I've been using [`uv`](https://docs.astral.sh/uv/) because I'm a bad boy.
+
+```
+cd python
+uv venv .python
+source .python/bin/activate
+uv pip install -r requirements.txt
+```
+
 
 #### Running
 
