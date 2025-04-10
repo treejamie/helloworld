@@ -32,4 +32,4 @@ jobs:
         working-directory: elixir
         run: |
           mix compile --force --
-          mix test w1
+          mix test
