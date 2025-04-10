@@ -16,3 +16,5 @@ Cargo.lock
 *.tmp
 *.old
 
+# Elixir
+_build
