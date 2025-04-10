@@ -10,7 +10,7 @@ It should also give you an idea of the languages that I'm into and my understand
 
 2. Each example should have tests to ensure the output is correct.
 
-3. Each example should have those tests automatically ran on their own feature branches.
+3. Have a bit of fun.
 
 
 ## Completed
