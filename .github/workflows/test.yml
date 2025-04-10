@@ -31,5 +31,21 @@ jobs:
       - name: Run tests
         working-directory: elixir
         run: |
-          mix compile --force --
+          mix compile --force
           mix test
+
+  test-python:
+    if: contains(github.ref, 'python/')
+    name: Test Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.11'
+
+      - name: Run Python tests
+        working-directory: python
+        run: |
+          python -m unittest discover
