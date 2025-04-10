@@ -1,0 +1,44 @@
+### Python Hello, World!
+
+The nice thing about python is that you can jump straight in and start writing code.
+There's no real project structure and it's mostly up to the user and readme to get setup.
+
+The bad thing about python is that you can jump straight in and start writing code.
+There's no real project structure and it's mostly up to the user and readme to get setup.
+
+#### Requirements
+
+You will need to have python installed in order to run this. If you don't want to setup a virtual environment,
+you don't have to. But if you want the joy of iPython, then you probably should.
+
+#### Setup
+
+I've been using [`uv`](https://docs.astral.sh/uv/) because I'm a bad boy.
+
+```
+cd python
+uv venv .python
+source .python/bin/activate
+uv pip install -r requirements.txt
+```
+
+
+#### Running
+
+```python 
+cd python
+
+# run the hello world for a random greeting
+python hello.py
+
+# run the hello world for a target language
+python hello.py [en|el|gd|mk|he|fr]
+
+# run the tests
+python -m unittest discover
+
+# be all interactive
+ipython
+%load_ext autoreload
+%autoreload 2
+```
