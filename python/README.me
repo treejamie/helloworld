@@ -28,9 +28,17 @@ uv pip install -r requirements.txt
 ```python 
 cd python
 
-# run the hello world
+# run the hello world for a random greeting
 python hello.py
+
+# run the hello world for a target language
+python hello.py [en|el|gd|mk|he|fr]
 
 # run the tests
 python test_hello.py
+
+# be all interactive
+ipython
+%load_ext autoreload
+%autoreload 2
 ```

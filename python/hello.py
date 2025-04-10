@@ -13,7 +13,7 @@ languages_we_understand = {
     "gd": "Halò, a shaoghail!",
     "mk": "Здраво, свету!",
     "he": "שלום, עולם!",
-    "fr": "Bonjour, le monde !"
+    "fr": "Bonjour, le monde!"
 }
 
 
@@ -31,22 +31,21 @@ def greeting(iso_639_1_code: str) -> str:
         return languages_we_understand["en"].upper()
 
 
-def speak(code: str | None = None) -> None:
+def speak(iso_code: str | None = None) -> None:
     """Prints a greeting in a given language. 
     If no language code is provided, then a random language is selected."""
 
     # get a random code if we don't have one
-    if not code:
-        code = random.choice(
+    if not iso_code:
+        iso_code = random.choice(
             list(languages_we_understand.keys())
         )
-    
     # if we have a code, make sure we understand it
-    if code not in languages_we_understand:
-        raise ValueError(f"Unsupported language code: '{code}'")
+    elif iso_code not in languages_we_understand:
+        raise ValueError(f"Unsupported language code: '{iso_code}'")
 
     # done, print it out.
-    print(greeting(code))
+    print(greeting(iso_code))
 
 
 if __name__ == "__main__":
