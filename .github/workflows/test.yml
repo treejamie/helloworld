@@ -5,7 +5,7 @@ on:
 
 jobs:
   test-elixir:
-    if: contains(github.ref, 'elixir/')
+    if: contains(github.ref, 'elixir')
     name: Test Elixir
     runs-on: ubuntu-latest
     strategy:
