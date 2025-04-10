@@ -1,6 +1,8 @@
 # macOS
 .DS_Store
 
+# python
+__pycache__
 
 # rust
 target/
@@ -14,3 +16,5 @@ Cargo.lock
 *.tmp
 *.old
 
+# Elixir
+_build
