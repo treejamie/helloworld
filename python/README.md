@@ -1,44 +1,96 @@
-### Python Hello, World!
+# Python Hello, World!
 
-The nice thing about python is that you can jump straight in and start writing code.
+The nice thing about python is that you can jump straight in and start writing code. There's no real project structure and it's mostly up to the user and readme to get setup. The bad thing about python is that you can jump straight in and start writing code.
 There's no real project structure and it's mostly up to the user and readme to get setup.
 
-The bad thing about python is that you can jump straight in and start writing code.
-There's no real project structure and it's mostly up to the user and readme to get setup.
+## Table of Contents
 
-#### Requirements
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Configuration](#configuration)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
-You will need to have python installed in order to run this. If you don't want to setup a virtual environment,
-you don't have to. But if you want the joy of iPython, then you probably should.
+## Installation
 
-#### Setup
+Instructions for installing:
 
-I've been using [`uv`](https://docs.astral.sh/uv/) because I'm a bad boy.
+```bash
+# Clone the repo
+git clone git@github.com:treejamie/helloworld.git
 
+# Navigate into the directory
+cd helloworld/python
 ```
-cd python
-uv venv .python
-source .python/bin/activate
-uv pip install -r requirements.txt
-```
+## Features
 
+This app will say hello in six different languages
 
-#### Running
+1. English
+2. Greek
+3. Gaelic
+4. Hebrew
+5. Macedonian
+6. French
 
-```python 
-cd python
+These languages were picked purely to play with different character sets. No hidden meanings or secret messages. Attempts were made to see if I could use the [ISO639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) to spell `he`, `ll`, `ow`, `or`, `ld`. But that didn't work out.
 
+```bash
 # run the hello world for a random greeting
 python hello.py
 
 # run the hello world for a target language
 python hello.py [en|el|gd|mk|he|fr]
 
+# do the typical en
+
 # run the tests
 python -m unittest discover
+```
+There's a bonus feature if you open the the file in a python shell and call `greeting` with a non-supported language code. This requires `ipython`, which is detailed in the [development](#development) section.
 
-# be all interactive
+```
 ipython
+from hello import greeting
+greeting('lol')
+'HELLO, WORLD!'  # English people have a magic ability to shout in English and it transforms into any target language
+quit
+
+
+## Development
+
+I've been using [`uv`](https://docs.astral.sh/uv/) because I'm rogue. But equally you can stick with the standard python tooling (`pip`), or whatever you're used to.
+ 
+
+```bash
+# make a virtualenv
+uv venv .python
+
+# activate
+source .python/bin/activate
+
+# install requirements
+uv pip install -r requirements.txt
+
+# fire up ipython (_poor mans iex_)
+ipython
+
+# and do this for autoreload goodness and great benefit
 %load_ext autoreload
 %autoreload 2
+
 ```
+
+## Contributing
+
+Pull requests are welcomed if:
+
+1. You can make any implementation jokes funnier.
+2. You stick to the [CONTRIBUTION](../CONTRIBUTING.md) guidelines.
+
+
+## License
+
+[MIT © 2025 Jamie Curle](../LICENSE.md)
