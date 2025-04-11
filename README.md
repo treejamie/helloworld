@@ -1,6 +1,6 @@
 # 👋 Hello World 🌍
 
-Most programming languages have a "Hello World" as their first introductory example and I thought it would be fun to have a repo dedicated to just "Hello World" examples. It soon dawned on me that it was an excellent way to get familiar with more than just the languages syntax and learning how to project characters to `stdout`. Printing out text isn't the aim here. The aim here is to understand how to start a project in that language with the tooling that's included.
+Most programming languages have a "Hello World" as their first introductory example and I thought it would be fun to have a repo dedicated to just "Hello World" examples. It soon dawned on me that it was an excellent way to get familiar with more than just the language's syntax and learning how to project characters to `stdout`. Printing out text isn't the aim here. The aim here is to understand how to start a project in that language with the tooling that's included.
 
 So it became a little side project with a few basic rules.
 
@@ -12,7 +12,7 @@ So it became a little side project with a few basic rules.
 
 ## Aims
 
-1. Demonstrate basic competance over a range of languages and ecosystems.
+1. Demonstrate basic competence over a range of languages and ecosystems.
 2. Demonstrate awareness of how to operate as a human involved in the authoring of code.
 
 
