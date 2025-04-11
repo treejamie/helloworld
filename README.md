@@ -7,16 +7,30 @@ So it became a little side project with a few basic rules.
 ## Rules
 
 1. Each example should be the most minimal "project" imaginable. 
-
 2. Each example should have tests to ensure the output is correct.
-
 3. Have a bit of fun, but at the same time follow best practice of the given ecosystem.
+
+## Aims
+
+1. Demonstrate basic competance over a range of languages and ecosystems.
+2. Demonstrate awareness of how to operate as a human involved in the authoring of code.
 
 
 ## Completed
 
 * [Elixir](elixir/README.md)
 * [Python](python/README.md)
+
+
+## In Progress
+
 * Rust (needs tests)
 * Go (needs tests)
 
+## Upcoming
+
+* TypeScript
+* Clojure
+* Haskell
+* C
+* C#
