@@ -55,13 +55,13 @@ There's a bonus feature if you open the the file in a python shell and call `gre
 ipython
 from hello import greeting
 greeting('lol')
-'HELLO, WORLD!'  # English people have a magic ability to shout in English and it transforms into any target language
+'HELLO, WORLD!'  # Magic shouty English translation powers
 quit
-
+```
 
 ## Development
 
-I've been using [`uv`](https://docs.astral.sh/uv/) because I'm rogue. But equally you can stick with the standard python tooling (`pip`), or whatever you're used to.
+I've been using [`uv`](https://docs.astral.sh/uv/) because I'm a dastardly rogue. You can stick with the standard python tooling (`pip`), or whatever you're used to.
  
 
 ```bash
