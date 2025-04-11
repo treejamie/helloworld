@@ -1,30 +1,36 @@
 # 👋 Hello World 🌍
 
-Most programming languages have a "Hello World" as their first introductory example.  I thought it would be nice to have a repo dedicated to just "Hello World" examples.
+Most programming languages have a "Hello World" as their first introductory example and I thought it would be fun to have a repo dedicated to just "Hello World" examples. It soon dawned on me that it was an excellent way to get familiar with more than just the language's syntax and learning how to project characters to `stdout`. Printing out text isn't the aim here. The aim here is to understand how to start a project in that language with the tooling that's included.
 
-It should also give you an idea of the languages that I'm into and my understanding of them.
+So it became a little side project with a few basic rules.
 
 ## Rules
 
-1. Each example should be the most minimal "project" imaginable. Printing out text isn't the aim here. The aim here is to understand how to start a project in that language.
-
+1. Each example should be the most minimal "project" imaginable. 
 2. Each example should have tests to ensure the output is correct.
+3. Have a bit of fun, but at the same time follow best practice of the given ecosystem.
 
-3. Have a bit of fun.
+## Aims
+
+1. Demonstrate basic competence over a range of languages and ecosystems.
+2. Demonstrate awareness of how to operate as a human involved in the authoring of code.
 
 
 ## Completed
 
-* [Elixir](https://github.com/treejamie/helloworld/pull/6)
-* Python (needs tests)
+* [Elixir](elixir/README.md)
+* [Python](python/README.md)
+
+
+## In Progress
+
 * Rust (needs tests)
 * Go (needs tests)
 
-## LLM / AI
+## Upcoming
 
-My usage of AI is inline with my personal AI policy. I don't have this written down at the time of writing, but in short it is this.
-
-1. I won't use AI output if I don't understand it. I should be capable of writing it.
-2. I never use AI to kick the learning can down the road. My relationship to AI is like that of a professor and a student. I ask it questions and I ask it to judge my work, but I never expect it to do my work.
-3. I am honest about my useage of AI and understand the implications of lying about it.
-4. I am able to work without it; but give me time to read so I can summarise and sythesise.
+* TypeScript
+* Clojure
+* Haskell
+* C
+* C#
