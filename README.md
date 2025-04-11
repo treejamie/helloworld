@@ -30,7 +30,16 @@ So it became a little side project with a few basic rules.
 ## Upcoming
 
 * TypeScript
+
+## Eventually
+
+* Erlang
 * Clojure
-* Haskell
+* Scheme
+* Racket
+* Haskell (for great good)
 * C
 * C#
+* OCaml
+* Zig
+* Brainfuck
