@@ -35,7 +35,7 @@ This app will say hello in six different languages
 5. Macedonian
 6. French
 
-These languages were picked purely to play with different character sets. No hidden meanings or secret messages. Attempts were made to see if I could use the [ISO639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) to spell `he`, `ll`, `ow`, `or`, `ld`. But that didn't work out.
+These languages were picked purely to play with different character sets.Attempts were made to see if I could use the [ISO639-1 code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) to spell `he`, `ll`, `ow`, `or`, `ld`. But that didn't work out.
 
 ```bash
 # run the hello world for a random greeting
@@ -44,25 +44,23 @@ python hello.py
 # run the hello world for a target language
 python hello.py [en|el|gd|mk|he|fr]
 
-# do the typical en
-
 # run the tests
 python -m unittest discover
 ```
 There's a bonus feature if you open the the file in a python shell and call `greeting` with a non-supported language code. This requires `ipython`, which is detailed in the [development](#development) section.
 
-```
+```bash
 ipython
 from hello import greeting
 greeting('lol')
-'HELLO, WORLD!'  # Magic shouty English translation powers
+'HELLO, WORLD!'  # Magic shouty English translation powers (fallback for unsupported languages)
 quit
 ```
 
 ## Development
 
-I've been using [`uv`](https://docs.astral.sh/uv/) because I'm a dastardly rogue. You can stick with the standard python tooling (`pip`), or whatever you're used to.
- 
+I've been using [`uv`](https://docs.astral.sh/uv/) because I'm a dastardly rogue who likes unconventional tools. `uv` is a Python toolchain manager, similar to `pip` but with extra features, but some folks raise concern over the fact it is the product of a commercial entity.
+
 
 ```bash
 # make a virtualenv
@@ -74,7 +72,7 @@ source .python/bin/activate
 # install requirements
 uv pip install -r requirements.txt
 
-# fire up ipython (_poor mans iex_)
+# fire up ipython (a decent Python REPL, though not quite IEx)
 ipython
 
 # and do this for autoreload goodness and great benefit
@@ -85,10 +83,11 @@ ipython
 
 ## Contributing
 
-Pull requests are welcomed if:
+Pull requests are welcome if:
 
-1. You can make any implementation jokes funnier.
-2. You stick to the [CONTRIBUTION](../CONTRIBUTING.md) guidelines.
+1. You can make the implementation jokes funnier.
+2. You can help me become a better programmer (_constructive feedback is gold and I appreciate it_).
+3. You stick to the [CONTRIBUTION](../CONTRIBUTING.md) guidelines.
 
 
 ## License
