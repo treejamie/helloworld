@@ -19,3 +19,8 @@ Cargo.lock
 
 # Elixir
 _build
+
+
+# next & node
+node_modules
+.next
