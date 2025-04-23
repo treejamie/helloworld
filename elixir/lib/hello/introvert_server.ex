@@ -60,7 +60,7 @@ defmodule Hello.IntrovertServer do
 
   def handle_info(:regret, _state) do
     # the server is lonely
-    IO.puts "\e[90m(introvert):\e[0m \e[32m(╥﹏╥) I'm lonely and full of regret. Come back friend.\e[0m"
+    IO.puts "\e[90m(introvert):\e[0m \e[32m (ಥ﹏ಥ) I'm lonely and full of regret. DO ME A RETURN FREN.\e[0m"
 
     # start the extovert again
     Supervisor.restart_child(Hello.ServerSupervisor, :extrovert)
