@@ -6,12 +6,18 @@ on:
       - main
       - elixir/**
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   docs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - uses: erlef/setup-elixir@v1
       with:
@@ -26,10 +32,13 @@ jobs:
       working-directory: elixir
       run: mix docs
 
-    - name: Upload GitHub Pages artifact
-      uses: actions/upload-pages-artifact@v1
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
+        # Upload entire repository
         path: ./elixir/doc
-
     - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v3
+      id: deployment
+      uses: actions/deploy-pages@v4
