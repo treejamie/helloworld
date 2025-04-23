@@ -12,8 +12,9 @@ The idea here was to showcase
 - Use `ExUnit` for unit tests and doc tests
 - Use Elixir to handle some input from a 3rd party file (CSV)
 - Use `ExDoc` to publish documentation for the package
-- Use GitHub actions to demonstrate CI/CD usage in Elixir land
-- Use Cloudflare pages to host the documentation
+- Use [Github pages to host the documentation][1]
+- Use GitHub actions to demonstrate CI/CD usage in Elixir land (tests / publish docs)
+
 
 
 Obviously, this is a slightly excessive version of "Hello, world!".  If you want to know more about the rationale behind over the top examples of "Hello, world!" then go [read the readme][0]
@@ -21,3 +22,4 @@ Obviously, this is a slightly excessive version of "Hello, world!".  If you want
 
 
 [0]: https://github.com/treejamie/helloworld
+[1]: https://treejamie.github.io/helloworld/
