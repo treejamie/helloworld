@@ -9,9 +9,9 @@ The idea here was to showcase
 
 - OTP `GenServers` talking to each other
 - OTP `Supervisors` running a bunch of servers
-- Use ExUnit for unit tests and doc tests
+- Use `ExUnit` for unit tests and doc tests
 - Use Elixir to handle some input from a 3rd party file (CSV)
-- Use ExDoc to publish documentation for the package
+- Use `ExDoc` to publish documentation for the package
 - Use GitHub actions to demonstrate CI/CD usage in Elixir land
 - Use Cloudflare pages to host the documentation
 

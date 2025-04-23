@@ -3,7 +3,7 @@ name: Generate and Deploy HexDocs
 on:
   push:
     branches:
-      - elixir/
+      - elixir/**
 
 jobs:
   docs:
