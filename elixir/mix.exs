@@ -11,7 +11,7 @@ defmodule Hackerank.MixProject do
       deps: deps(),
       name: "HelloWorld - Elixir",
       source_url: "https://github.com/treejamie/helloworld/elixir",
-      homepage_url: "https://your_homepage.com",
+      homepage_url: "https://treejamie.github.io/helloworld/",
       docs: [
         formatters: ["html"],
         main: "api-reference",
