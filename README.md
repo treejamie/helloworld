@@ -10,6 +10,7 @@ So it became a little side project with a few basic rules.
 ## Rules
 
 1. Each example should be the most minimal "project" imaginable. 
+2. Each example should demonstrate the most maximal understanding of that language & ecosystem.
 2. Each example should have tests to ensure the output is correct.
 3. Have a bit of fun, but at the same time follow best practice of the given ecosystem.
 
@@ -21,20 +22,25 @@ So it became a little side project with a few basic rules.
 
 ## Completed
 
-* [Elixir](elixir/README.md)
-* [Python](python/README.md)
+* [Elixir](elixir/README.md) (_most fun_)
+* [Python](python/README.md) (_pretty lame in terms of humour_)
 
 
-## In Progress
+## Needs redo
 
-* Rust (needs tests)
-* Go (needs tests)
+I did these two before I came up with the rules above. They both print out "Hello, world!" but there's little in the way of fun or exploration of that languages ecosystem.
+
+* Rust
+* Go
 
 ## Upcoming
 
 * TypeScript
 
 ## Eventually
+
+And by eventually, I mean maybe. In terms of prioroity they sit below the endless list of DIY tasks 
+that I have to do around the house and home.
 
 * Erlang
 * Clojure

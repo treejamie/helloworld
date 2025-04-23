@@ -7,7 +7,8 @@ defmodule Hackerank.MixProject do
   def project do
     [
       app: :helloworld,
-      version: "1.0.0"
+      version: "1.0.0",
+      deps: deps()
     ]
   end
 
@@ -15,5 +16,9 @@ defmodule Hackerank.MixProject do
     [
       mod: {Hello.World, []}
     ]
+  end
+
+  defp deps do
+    [{:csv, "~> 3.2"}]
   end
 end

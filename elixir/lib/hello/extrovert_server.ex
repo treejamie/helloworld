@@ -1,5 +1,6 @@
 defmodule Hello.ExtrovertServer do
   use GenServer
+  alias Hello.Greetings
 
   @name :extrovert
 
@@ -16,10 +17,16 @@ defmodule Hello.ExtrovertServer do
     # start talking - incestantly.
     Process.send_after(self(), :talk, 1200)
 
+    # load the greetings from the CSV
+    greetings = Greetings.load_greetings()
+
     # response
     {:ok, []}
   end
 
+  @doc """
+  Terminate the Extrovert  - probably because it talked too much
+  """
   def terminate(_reason, _state) do
     IO.puts("\e[96m (extrovert): \e[95mY U SHUT ME DOWN FREN?.\e[0m")
     :ok
