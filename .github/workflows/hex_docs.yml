@@ -3,7 +3,7 @@ name: Generate and Deploy HexDocs
 on:
   push:
     branches:
-      - elixir/genservers  # or your default branch
+      - elixir/genservers
 
 jobs:
   docs:
@@ -14,8 +14,8 @@ jobs:
 
     - uses: erlef/setup-elixir@v1
       with:
-        elixir-version: '1.18'  # your Elixir version
-        otp-version: '27'       # your OTP version
+        elixir-version: '1.18'
+        otp-version: '27'
 
     - name: Install dependencies
       working-directory: elixir
