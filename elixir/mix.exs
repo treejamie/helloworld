@@ -14,8 +14,7 @@ defmodule Hackerank.MixProject do
       homepage_url: "https://your_homepage.com",
       docs: [
         formatters: ["html"],
-        main: "readme",
-        extras: ["README.md"]
+        main: "api-reference",
       ]
     ]
   end
