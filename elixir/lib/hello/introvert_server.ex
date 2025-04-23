@@ -36,7 +36,7 @@ defmodule Hello.IntrovertServer do
 
 
   @doc """
-  When the state is eight, introverts flip tables and kill things
+  When the state is eight, introverts flip tables and kill things.
   """
   def handle_info(:hello, 8) do
 

@@ -8,7 +8,15 @@ defmodule Hackerank.MixProject do
     [
       app: :helloworld,
       version: "1.0.0",
-      deps: deps()
+      deps: deps(),
+      name: "HelloWorld - Elixir",
+      source_url: "https://github.com/treejamie/helloworld/elixir",
+      homepage_url: "https://your_homepage.com",
+      docs: [
+        formatters: ["html"],
+        main: "readme",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -19,6 +27,10 @@ defmodule Hackerank.MixProject do
   end
 
   defp deps do
-    [{:csv, "~> 3.2"}]
+    [
+      {:csv, "~> 3.2"},
+      {:ex_doc, "~> 0.30", only: :dev, runtime: false}
+    ]
+
   end
 end
