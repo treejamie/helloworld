@@ -26,9 +26,7 @@ jobs:
       working-directory: elixir
       run: mix docs
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./elixir/doc
-        publish_branch: gh-pages
+        path: ./elixir/doc
