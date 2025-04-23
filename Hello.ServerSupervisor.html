@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="dist/html-elixir-6X3L5KMG.css" />
 
-    <script defer src="dist/sidebar_items-0C8E7D00.js"></script>
+    <script defer src="dist/sidebar_items-CBAF13F8.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-ALU6OERS.js"></script>
 
@@ -89,11 +89,15 @@ HelloWorld - Elixir
 
 
     <section id="moduledoc">
-<p>The supervisor controls two servers, one is an introvert
-and the other is an extrovert. The aim is to demonstate
-how processes can be managed by a supervisor but how they
-can also interact.</p><p>When the introvert has had enough of the extrover, it kills
-the process.</p>
+<p>The <strong>ServerSupervisor</strong> manages two interacting GenServers:
+an <strong>Introvert server</strong> and an <strong>Extrovert server</strong>.</p><p>This setup demonstrates <strong>process supervision</strong> and <strong>inter-process communication</strong>:</p><ul><li>The <strong>Introvert server</strong> prefers peace and quiet, escalating when disturbed.</li><li>The <strong>Extrovert server</strong> energetically sends greetings.</li><li>When the introvert reaches its limit, it <strong>terminates the extrovert process</strong>.</li></ul><p>This showcases how <strong>supervisors</strong> handle <strong>fault tolerance</strong> and <strong>restarts</strong> in Elixir.</p><h2 id="module-supervision-strategy" class="section-heading">
+  <a href="#module-supervision-strategy" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Supervision Strategy</span>
+</h2>
+<ul><li>Uses <code class="inline">:one_for_one</code>: if a child process crashes, <strong>only that process</strong> is restarted.</li><li>The <strong>extrovert</strong> process is given a custom child spec with <code class="inline">id: :extrovert</code> for
+<strong>easy identification and control</strong>.</li></ul>
     </section>
 
 </div>
@@ -136,6 +140,9 @@ the process.</p>
 
       </div>
 
+        <div class="summary-synopsis"><p>Starts the <strong>ServerSupervisor</strong>, which in turn starts the
+<strong>Introvert</strong> and <strong>Extrovert</strong> servers.</p></div>
+
     </div>
 
 </div>
@@ -161,7 +168,7 @@ the process.</p>
       <h1 class="signature" translate="no">child_spec(init_arg)</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/server_supervisor.ex#L11" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/server_supervisor.ex#L20" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -183,7 +190,7 @@ the process.</p>
       <h1 class="signature" translate="no">init(atom)</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/server_supervisor.ex#L18" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/server_supervisor.ex#L32" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -205,7 +212,7 @@ the process.</p>
       <h1 class="signature" translate="no">start_link()</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/server_supervisor.ex#L13" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/server_supervisor.ex#L27" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -214,7 +221,8 @@ the process.</p>
 
   <section class="docstring">
 
-
+<p>Starts the <strong>ServerSupervisor</strong>, which in turn starts the
+<strong>Introvert</strong> and <strong>Extrovert</strong> servers.</p>
   </section>
 </section>
 

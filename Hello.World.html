@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="dist/html-elixir-6X3L5KMG.css" />
 
-    <script defer src="dist/sidebar_items-0C8E7D00.js"></script>
+    <script defer src="dist/sidebar_items-CBAF13F8.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-ALU6OERS.js"></script>
 
@@ -88,6 +88,10 @@ HelloWorld - Elixir
   </div>
 
 
+    <section id="moduledoc">
+<p>The main <strong>Hello World application entry point</strong>.</p><ul><li>Starts the <strong>ServerSupervisor</strong>, which in turn supervises:<ul><li>The <strong>Introvert server</strong> (handles quiet tolerance).</li><li>The <strong>Extrovert server</strong> (enthusiastically greets the world).</li></ul></li></ul><p>Demonstrates <strong>application startup</strong>, <strong>supervision trees</strong>, and <strong>process interaction</strong> in Elixir.</p>
+    </section>
+
 </div>
 
   <section id="summary" class="details-list">
@@ -108,7 +112,7 @@ HelloWorld - Elixir
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/elixir/Application.html#c:start/2"><code class="inline">Application.start/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Starts the <strong>Hello World application</strong>.</p></div>
 
     </div>
 
@@ -135,7 +139,7 @@ HelloWorld - Elixir
       <h1 class="signature" translate="no">start(type, args)</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/world.ex#L5" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/world.ex#L20" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -144,7 +148,7 @@ HelloWorld - Elixir
 
   <section class="docstring">
 
-<p>Callback implementation for <a href="https://hexdocs.pm/elixir/Application.html#c:start/2"><code class="inline">Application.start/2</code></a>.</p>
+<p>Starts the <strong>Hello World application</strong>.</p><ul><li>Initializes the <strong>supervision tree</strong> by starting the <a href="Hello.ServerSupervisor.html"><code class="inline">Hello.ServerSupervisor</code></a>.</li></ul>
   </section>
 </section>
 

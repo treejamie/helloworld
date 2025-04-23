@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="dist/html-elixir-6X3L5KMG.css" />
 
-    <script defer src="dist/sidebar_items-0C8E7D00.js"></script>
+    <script defer src="dist/sidebar_items-CBAF13F8.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-ALU6OERS.js"></script>
 
@@ -89,11 +89,25 @@ HelloWorld - Elixir
 
 
     <section id="moduledoc">
-<p>The Introvert server enjoys quiet and prefers silence.</p><p>It will be polite about requesting silence, up to a point, but after that
-the introvert may get quite forceful about matters. The introvert has a
-finite temper and may get &quot;propery radgy&quot; (geordie english).</p><p>The introvert server always apologises for getting mad, and will clean
-up any mess that it has created. It doesn't hold a grudge but it also
-isn't very clever.</p><p>The introvert only speaks English.</p>
+<p>The <strong>Introvert server</strong> enjoys peace and quiet but has limited patience
+for interruptions.</p><p>When greeted (<code class="inline">:hello</code>), the introvert politely requests silence up to a point,
+gradually escalating in frustration. If pushed too far (state reaches 8),
+it <strong>flips tables</strong>, <strong>terminates the Extrovert server</strong>, and enjoys a period
+of blissful silence. After a cooldown, the introvert feels regret and
+<strong>restarts the Extrovert server</strong>.</p><h2 id="module-state" class="section-heading">
+  <a href="#module-state" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">State</span>
+</h2>
+<ul><li>Integer count representing the <strong>number of times</strong> the introvert has
+been disturbed.</li></ul><h2 id="module-behavior" class="section-heading">
+  <a href="#module-behavior" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Behavior</span>
+</h2>
+<ul><li>Politely asks for quiet until its <strong>temper threshold</strong> is reached.</li><li>Shuts down the <strong>Extrovert server</strong> at peak frustration.</li><li>Waits before <strong>restarting Extrovert</strong> after calming down.</li></ul>
     </section>
 
 </div>
@@ -126,7 +140,7 @@ isn't very clever.</p><p>The introvert only speaks English.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>When the state is eight, introverts flip tables and kill things.</p></div>
+        <div class="summary-synopsis"><p>Handles <code class="inline">:hello</code> messages for all states <strong>below 8</strong>.</p></div>
 
     </div>
 
@@ -136,9 +150,7 @@ isn't very clever.</p><p>The introvert only speaks English.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Intialise function. State is a count of the amount of times introvert
-has told extrovert to be quiet. In a practical sense though it could
-be anything.</p></div>
+        <div class="summary-synopsis"><p>Initializes the <strong>Introvert server</strong>.</p></div>
 
     </div>
 
@@ -147,6 +159,8 @@ be anything.</p></div>
         <a href="#start_link/1" data-no-tooltip="" translate="no">start_link(_)</a>
 
       </div>
+
+        <div class="summary-synopsis"><p>Starts the <strong>Introvert server</strong>.</p></div>
 
     </div>
 
@@ -173,7 +187,7 @@ be anything.</p></div>
       <h1 class="signature" translate="no">child_spec(init_arg)</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L16" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L21" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -195,7 +209,7 @@ be anything.</p></div>
       <h1 class="signature" translate="no">handle_info(msg, state)</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L41" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L60" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -204,7 +218,7 @@ be anything.</p></div>
 
   <section class="docstring">
 
-<p>When the state is eight, introverts flip tables and kill things.</p>
+<p>Handles <code class="inline">:hello</code> messages for all states <strong>below 8</strong>.</p><ul><li>Escalates responses based on <strong>frustration level</strong>.</li><li>Increases the internal state count.</li></ul>
   </section>
 </section>
 <section class="detail" id="init/1">
@@ -217,7 +231,7 @@ be anything.</p></div>
       <h1 class="signature" translate="no">init(state)</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L33" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L44" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -226,15 +240,13 @@ be anything.</p></div>
 
   <section class="docstring">
 
-<p>Intialise function. State is a count of the amount of times introvert
-has told extrovert to be quiet. In a practical sense though it could
-be anything.</p><h2 id="init/1-parameters" class="section-heading">
+<p>Initializes the <strong>Introvert server</strong>.</p><ul><li><strong>State</strong>: Starts at <code class="inline">0</code>, representing the introvert's tolerance level.</li></ul><h2 id="init/1-parameters" class="section-heading">
   <a href="#init/1-parameters" class="hover-link">
     <i class="ri-link-m" aria-hidden="true"></i>
   </a>
   <span class="text">Parameters</span>
 </h2>
-<ul><li>state (integer): start at zero for maximum introvert tolerance</li></ul>
+<ul><li><code class="inline">state</code> (integer): Initial state, defaults to <code class="inline">0</code>.</li></ul>
   </section>
 </section>
 <section class="detail" id="start_link/1">
@@ -247,7 +259,7 @@ be anything.</p><h2 id="init/1-parameters" class="section-heading">
       <h1 class="signature" translate="no">start_link(_)</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L20" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/introvert_server.ex#L30" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -256,7 +268,7 @@ be anything.</p><h2 id="init/1-parameters" class="section-heading">
 
   <section class="docstring">
 
-
+<p>Starts the <strong>Introvert server</strong>.</p><p>Registers the process under the <code class="inline">:introvert</code> name and initializes state to <code class="inline">0</code>.</p>
   </section>
 </section>
 

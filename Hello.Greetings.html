@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="dist/html-elixir-6X3L5KMG.css" />
 
-    <script defer src="dist/sidebar_items-0C8E7D00.js"></script>
+    <script defer src="dist/sidebar_items-CBAF13F8.js"></script>
     <script defer src="docs_config.js"></script>
     <script defer src="dist/html-ALU6OERS.js"></script>
 
@@ -89,7 +89,8 @@ HelloWorld - Elixir
 
 
     <section id="moduledoc">
-<p>An elixir interface to the project CSV file with all of the greetings.</p>
+<p>Provides a simple Elixir interface to load <strong>&quot;Hello, World!&quot; greetings</strong>
+from a CSV file.</p><p>The CSV is expected to have multiple rows with the greeting in the <strong>second column</strong>.</p>
     </section>
 
 </div>
@@ -112,7 +113,7 @@ HelloWorld - Elixir
 
       </div>
 
-        <div class="summary-synopsis"><p>Loads the &quot;Hello, world!&quot; strings from CSV file into a list</p></div>
+        <div class="summary-synopsis"><p>Loads the list of greetings from <code class="inline">hello_world_30_languages.csv</code>.</p></div>
 
     </div>
 
@@ -139,7 +140,7 @@ HelloWorld - Elixir
       <h1 class="signature" translate="no">load_greetings()</h1>
 
 
-        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/greetings.ex#L9" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/treejamie/helloworld/elixir/blob/main/lib/hello/greetings.ex#L38" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -148,7 +149,36 @@ HelloWorld - Elixir
 
   <section class="docstring">
 
-<p>Loads the &quot;Hello, world!&quot; strings from CSV file into a list</p>
+<p>Loads the list of greetings from <code class="inline">hello_world_30_languages.csv</code>.</p><h2 id="load_greetings/0-returns" class="section-heading">
+  <a href="#load_greetings/0-returns" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Returns</span>
+</h2>
+<p>A list of strings, each representing a translated &quot;Hello, World!&quot; message.</p><h2 id="load_greetings/0-example" class="section-heading">
+  <a href="#load_greetings/0-example" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Example</span>
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="nc">Hello.Greetings</span><span class="o">.</span><span class="n">load_greetings</span><span class="p" data-group-id="1718227598-1">(</span><span class="p" data-group-id="1718227598-1">)</span><span class="w">
+</span><span class="p" data-group-id="1718227598-2">[</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;¡Hola, mundo!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bonjour, le monde!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Hallo, Welt!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ciao, mondo!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Olá, mundo!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Привет, мир!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;你好，世界！&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;こんにちは、世界！&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;안녕하세요, 세계!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;مرحبا بالعالم!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;नमस्ते दुनिया!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ওহে বিশ্ব!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Merhaba, dünya!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Witaj, świecie!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Привіт, світе!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;سلام دنیا!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hej, världen!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hei, verden!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hej, verden!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Hei, maailma!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ahoj, světe!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Γειά σου, κόσμε!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;שלום, עולם!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Halo, dunia!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Halo, dunia!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Xin chào, thế giới!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;สวัสดีชาวโลก!&quot;</span><span class="p">,</span><span class="w">
+</span><span class="s">&quot;Hallo, wereld!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Salut, lume!&quot;</span><span class="p" data-group-id="1718227598-2">]</span></code></pre><h2 id="load_greetings/0-notes" class="section-heading">
+  <a href="#load_greetings/0-notes" class="hover-link">
+    <i class="ri-link-m" aria-hidden="true"></i>
+  </a>
+  <span class="text">Notes</span>
+</h2>
+<ul><li>Assumes the CSV file is located <strong>one level above</strong> the current directory.</li><li>Uses <a href="https://hexdocs.pm/csv/3.2.2/CSV.html#decode!/1"><code class="inline">CSV.decode!/1</code></a> to parse rows.</li><li>Extracts the <strong>second column</strong> from each row (ignores language code and extras).</li></ul>
   </section>
 </section>
 
