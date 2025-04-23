@@ -26,7 +26,8 @@ jobs:
       working-directory: elixir
       run: mix docs
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v3
       with:
+        # Deploy content from elixir/doc/
         path: ./elixir/doc
