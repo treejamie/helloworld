@@ -18,8 +18,7 @@ defmodule Hello.World do
   - Initializes the **supervision tree** by starting the `Hello.ServerSupervisor`.
   """
   def start(_type, _args) do
-    IO.puts "Starting the Hello World application ..."
+    IO.puts("Starting the Hello World application ...")
     Hello.ServerSupervisor.start_link()
   end
-
 end

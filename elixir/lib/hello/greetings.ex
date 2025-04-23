@@ -6,7 +6,6 @@ defmodule Hello.Greetings do
   The CSV is expected to have multiple rows with the greeting in the **second column**.
   """
 
-
   @doc """
   Loads the list of greetings from `hello_world_30_languages.csv`.
 

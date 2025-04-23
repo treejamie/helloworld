@@ -27,7 +27,7 @@ defmodule Hello.ExtrovertServer do
   This function links the process and registers it under the `:extrovert` name.
   """
   def start_link(_) do
-    IO.puts "Starting the Extrovert server..."
+    IO.puts("Starting the Extrovert server...")
 
     GenServer.start_link(__MODULE__, :ok, name: @name)
   end
@@ -58,7 +58,6 @@ defmodule Hello.ExtrovertServer do
     :ok
   end
 
-
   @impl true
   @doc """
   Handles the `:talk` message.
@@ -77,6 +76,7 @@ defmodule Hello.ExtrovertServer do
     {greeting, greetings} =
       state[:greetings]
       |> List.pop_at(random_index)
+
     # speak
     IO.puts("\e[96m (extrovert): #{greeting}\e[0m")
 

@@ -28,8 +28,8 @@ defmodule Hello.IntrovertServer do
   Registers the process under the `:introvert` name and initializes state to `0`.
   """
   def start_link(_) do
-    IO.puts "Starting the Introvert server... (reluctantly)"
-    GenServer.start_link(__MODULE__, 0 , name: @name)
+    IO.puts("Starting the Introvert server... (reluctantly)")
+    GenServer.start_link(__MODULE__, 0, name: @name)
   end
 
   @impl true
@@ -47,6 +47,26 @@ defmodule Hello.IntrovertServer do
 
   @impl true
   @doc """
+  Handles the `:regret` message.
+
+  - Triggers after the introvert's cooldown.
+  - Restarts the **Extrovert server**.
+  """
+  def handle_info(:regret, _state) do
+    # the server is lonely
+    IO.puts(
+      "\e[90m(introvert):\e[0m \e[32m (ಥ﹏ಥ) I'm lonely and full of regret. DO ME A RETURN FREN.\e[0m"
+    )
+
+    # start the extovert again
+    Supervisor.restart_child(Hello.ServerSupervisor, :extrovert)
+
+    # reply with a reset state (Introvert has calmed down)
+    {:noreply, 0}
+  end
+
+  @impl true
+  @doc """
   Handles incoming `:hello` messages.
 
   - Escalates responses based on the **current state**.
@@ -58,17 +78,16 @@ defmodule Hello.IntrovertServer do
   - `state`: Current frustration level.
   """
   def handle_info(:hello, 8) do
-
     # table flip
-    IO.puts "\n\n"
-    IO.puts "\e[90m(introvert):\e[0m \e[91m(╯°□°）╯︵ ┻━┻\e[0m"
-    IO.puts "\e[90m(introvert):\e[0m \e[91mYou totally had that coming.\e[0m"
-    IO.puts "\n\n"
+    IO.puts("\n\n")
+    IO.puts("\e[90m(introvert):\e[0m \e[91m(╯°□°）╯︵ ┻━┻\e[0m")
+    IO.puts("\e[90m(introvert):\e[0m \e[91mYou totally had that coming.\e[0m")
+    IO.puts("\n\n")
     # enough is enough, kill the extrovert
     Supervisor.terminate_child(Hello.ServerSupervisor, :extrovert)
 
     # finally the introvert has some time to recharge
-    IO.puts "\e[90m(introvert):\e[0m \e[32m(＾▽＾) Blissful silence.\e[0m"
+    IO.puts("\e[90m(introvert):\e[0m \e[32m(＾▽＾) Blissful silence.\e[0m")
 
     # but also, specify a future time to apologise and start it again
     Process.send_after(self(), :regret, 5000)
@@ -78,45 +97,27 @@ defmodule Hello.IntrovertServer do
   end
 
   @impl true
-  @doc """
-  Handles the `:regret` message.
-
-  - Triggers after the introvert's cooldown.
-  - Restarts the **Extrovert server**.
-  """
-  def handle_info(:regret, _state) do
-    # the server is lonely
-    IO.puts "\e[90m(introvert):\e[0m \e[32m (ಥ﹏ಥ) I'm lonely and full of regret. DO ME A RETURN FREN.\e[0m"
-
-    # start the extovert again
-    Supervisor.restart_child(Hello.ServerSupervisor, :extrovert)
-
-    # reply with a reset state (Introvert has calmed down)
-    {:noreply, 0}
-  end
-
-  @impl true
-  @doc """
-  Handles `:hello` messages for all states **below 8**.
-
-  - Escalates responses based on **frustration level**.
-  - Increases the internal state count.
-  """
   def handle_info(:hello, state) do
     # the introvert speaks inside his own head - which is the terminal.
     cond do
       state == 0 ->
-        IO.puts "\e[90m(introvert):\e[0m \e[32m(＾▽＾) Please, be quiet.\e[0m"
+        IO.puts("\e[90m(introvert):\e[0m \e[32m(＾▽＾) Please, be quiet.\e[0m")
+
       state < 3 ->
-        IO.puts "\e[90m(introvert):\e[0m \e[94m(¬‿¬) Again, please, be quiet.\e[0m"
+        IO.puts("\e[90m(introvert):\e[0m \e[94m(¬‿¬) Again, please, be quiet.\e[0m")
+
       state < 5 ->
-        IO.puts "\e[90m(introvert):\e[0m \e[93m(ಠ_ಠ) Mate, for the #{state}th time - SHUT UP.\e[0m"
+        IO.puts(
+          "\e[90m(introvert):\e[0m \e[93m(ಠ_ಠ) Mate, for the #{state}th time - SHUT UP.\e[0m"
+        )
+
       true ->
-        IO.puts "\e[90m(introvert):\e[0m \e[38;2;255;165;0m(╬ಠ益ಠ) Am getting proper radgey me like.\e[0m"
+        IO.puts(
+          "\e[90m(introvert):\e[0m \e[38;2;255;165;0m(╬ಠ益ಠ) Am getting proper radgey me like.\e[0m"
+        )
     end
 
     # now return the correct response and the updated state
     {:noreply, state + 1}
   end
-
 end

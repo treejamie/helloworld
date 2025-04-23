@@ -19,14 +19,13 @@ defmodule Hello.ServerSupervisor do
   """
   use Supervisor
 
-
   @doc """
   Starts the **ServerSupervisor**, which in turn starts the
   **Introvert** and **Extrovert** servers.
   """
   def start_link() do
-   IO.puts "Starting THE supervisor..."
-   Supervisor.start_link(__MODULE__, :ok, name: __MODULE__)
+    IO.puts("Starting THE supervisor...")
+    Supervisor.start_link(__MODULE__, :ok, name: __MODULE__)
   end
 
   def init(:ok) do
@@ -46,5 +45,4 @@ defmodule Hello.ServerSupervisor do
     # https://hexdocs.pm/elixir/Supervisor.html#module-strategies
     Supervisor.init(children, strategy: :one_for_one)
   end
-
 end
