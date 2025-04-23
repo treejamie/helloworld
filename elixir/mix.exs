@@ -7,7 +7,13 @@ defmodule Hackerank.MixProject do
   def project do
     [
       app: :helloworld,
-      version: "1.0.0",
+      version: "1.0.0"
+    ]
+  end
+
+  def application do
+    [
+      mod: {Hello.World, []}
     ]
   end
 end

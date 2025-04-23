@@ -39,7 +39,7 @@ So it became a little side project with a few basic rules.
 * Erlang
 * Clojure
 * Scheme
-* Racket
+* Racket 
 * Haskell (for great good)
 * C
 * C#
