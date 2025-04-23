@@ -89,6 +89,4 @@ defmodule Hello.ExtrovertServer do
     # and process the response, with an updated state
     {:noreply, %{state | greetings: greetings}}
   end
-
-
 end

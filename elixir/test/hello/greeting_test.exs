@@ -1,6 +1,7 @@
 defmodule Hello.Greetings.Tests do
   use ExUnit.Case
   alias Hello.Greetings
+  doctest Hello.Greetings
 
   test "load_greetings" do
     # Here's the greetings

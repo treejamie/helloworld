@@ -1,42 +1,61 @@
 defmodule Hello.IntrovertServer do
   @moduledoc """
-  The Introvert server enjoys quiet and prefers silence.
+  The **Introvert server** enjoys peace and quiet but has limited patience
+  for interruptions.
 
-  It will be polite about requesting silence, up to a point, but after that
-  the introvert may get quite forceful about matters. The introvert has a
-  finite temper and may get "propery radgy" (geordie english).
+  When greeted (`:hello`), the introvert politely requests silence up to a point,
+  gradually escalating in frustration. If pushed too far (state reaches 8),
+  it **flips tables**, **terminates the Extrovert server**, and enjoys a period
+  of blissful silence. After a cooldown, the introvert feels regret and
+  **restarts the Extrovert server**.
 
-  The introvert server always apologises for getting mad, and will clean
-  up any mess that it has created. It doesn't hold a grudge but it also
-  isn't very clever.
+  ## State
+  - Integer count representing the **number of times** the introvert has
+    been disturbed.
 
-  The introvert only speaks English.
-
+  ## Behavior
+  - Politely asks for quiet until its **temper threshold** is reached.
+  - Shuts down the **Extrovert server** at peak frustration.
+  - Waits before **restarting Extrovert** after calming down.
   """
   use GenServer
 
   @name :introvert
 
+  @doc """
+  Starts the **Introvert server**.
+
+  Registers the process under the `:introvert` name and initializes state to `0`.
+  """
   def start_link(_) do
     IO.puts "Starting the Introvert server... (reluctantly)"
     GenServer.start_link(__MODULE__, 0 , name: @name)
   end
 
+  @impl true
   @doc """
-  Intialise function. State is a count of the amount of times introvert
-  has told extrovert to be quiet. In a practical sense though it could
-  be anything.
+  Initializes the **Introvert server**.
+
+  - **State**: Starts at `0`, representing the introvert's tolerance level.
 
   ## Parameters
-  - state (integer): start at zero for maximum introvert tolerance
+  - `state` (integer): Initial state, defaults to `0`.
   """
   def init(state) do
     {:ok, state}
   end
 
-
+  @impl true
   @doc """
-  When the state is eight, introverts flip tables and kill things.
+  Handles incoming `:hello` messages.
+
+  - Escalates responses based on the **current state**.
+  - When the state reaches `8`, the introvert **flips tables**,
+    **terminates the Extrovert server**, and **schedules regret**.
+
+  ## Parameters
+  - `:hello`: Trigger message from the Extrovert server.
+  - `state`: Current frustration level.
   """
   def handle_info(:hello, 8) do
 
@@ -58,6 +77,13 @@ defmodule Hello.IntrovertServer do
     {:noreply, 0}
   end
 
+  @impl true
+  @doc """
+  Handles the `:regret` message.
+
+  - Triggers after the introvert's cooldown.
+  - Restarts the **Extrovert server**.
+  """
   def handle_info(:regret, _state) do
     # the server is lonely
     IO.puts "\e[90m(introvert):\e[0m \e[32m (ಥ﹏ಥ) I'm lonely and full of regret. DO ME A RETURN FREN.\e[0m"
@@ -69,6 +95,13 @@ defmodule Hello.IntrovertServer do
     {:noreply, 0}
   end
 
+  @impl true
+  @doc """
+  Handles `:hello` messages for all states **below 8**.
+
+  - Escalates responses based on **frustration level**.
+  - Increases the internal state count.
+  """
   def handle_info(:hello, state) do
     # the introvert speaks inside his own head - which is the terminal.
     cond do
