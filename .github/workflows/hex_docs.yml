@@ -14,16 +14,19 @@ jobs:
 
     - uses: erlef/setup-elixir@v1
       with:
-        elixir-version: '1.15'  # your Elixir version
-        otp-version: '26'       # your OTP version
+        elixir-version: '1.18'  # your Elixir version
+        otp-version: '27'       # your OTP version
 
     - name: Install dependencies
+      working-directory: elixir
       run: mix deps.get
 
     - name: Build HexDocs
+      working-directory: elixir
       run: mix docs
 
     - name: Deploy to GitHub Pages
+      working-directory: elixir
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
