@@ -47,10 +47,11 @@ defmodule Hello.IntrovertServer do
 
   @impl true
   @doc """
-  Handles the `:regret` message.
+  Handles incoming `:hello` and `:regret` messages.
 
-  - Triggers after the introvert's cooldown.
-  - Restarts the **Extrovert server**.
+  - On `:hello`, escalates responses based on the current state.
+  - At state 8, flips tables, terminates the extrovert, and schedules regret.
+  - On `:regret`, restarts the extrovert and resets state.
   """
   def handle_info(:regret, _state) do
     # the server is lonely
@@ -66,17 +67,7 @@ defmodule Hello.IntrovertServer do
   end
 
   @impl true
-  @doc """
-  Handles incoming `:hello` messages.
-
-  - Escalates responses based on the **current state**.
-  - When the state reaches `8`, the introvert **flips tables**,
-    **terminates the Extrovert server**, and **schedules regret**.
-
-  ## Parameters
-  - `:hello`: Trigger message from the Extrovert server.
-  - `state`: Current frustration level.
-  """
+  @doc false
   def handle_info(:hello, 8) do
     # table flip
     IO.puts("\n\n")
@@ -97,6 +88,7 @@ defmodule Hello.IntrovertServer do
   end
 
   @impl true
+  @doc false
   def handle_info(:hello, state) do
     # the introvert speaks inside his own head - which is the terminal.
     cond do
