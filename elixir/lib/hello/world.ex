@@ -1,43 +1,24 @@
 defmodule Hello.World do
   @moduledoc """
-  Hello has one purpose: to say Hello, world!
+  The main **Hello World application entry point**.
 
-  However, saying hello is a business fraught with peril and uncertainty.
+  - Starts the **ServerSupervisor**, which in turn supervises:
+    - The **Introvert server** (handles quiet tolerance).
+    - The **Extrovert server** (enthusiastically greets the world).
+
+  Demonstrates **application startup**, **supervision trees**, and **process interaction** in Elixir.
   """
 
+  use Application
+
+  @impl true
   @doc """
-  Returns "Hello, world!"
+  Starts the **Hello World application**.
 
-  ## Examples
-
-    iex> Hello.World.speak_normally()
-    "Hello, world!"
+  - Initializes the **supervision tree** by starting the `Hello.ServerSupervisor`.
   """
-  def speak_normally() do
-    "Hello, world!"
-  end
-
-  @doc """
-  Returns a nice Geordie phrase: "Alreet, hamma!"
-
-  ## Examples
-
-    iex> Hello.World.speak_geordie()
-    "Alreet, hamma!"
-  """
-  def speak_geordie() do
-    "Alreet, hamma!"
-  end
-
-  @doc """
-  Returns either a "normal" greeting or a Geordie greeting.
-
-  ## Examples
-
-    iex> Hello.World.random_greeting() in ["Hello, world!", "Alreet, hamma!"]
-    true
-  """
-  def random_greeting() do
-    Enum.random([speak_geordie(), speak_normally()])
+  def start(_type, _args) do
+    IO.puts("Starting the Hello World application ...")
+    Hello.ServerSupervisor.start_link()
   end
 end

@@ -19,6 +19,8 @@ Cargo.lock
 
 # Elixir
 _build
+deps
+elixir/doc
 
 
 # next & node
