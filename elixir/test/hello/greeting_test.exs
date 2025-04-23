@@ -36,7 +36,7 @@ defmodule Hello.Greetings.Tests do
       "Xin chào, thế giới!",
       "สวัสดีชาวโลก!",
       "Hallo, wereld!",
-      "Salut, lume!"
+      "Salut, lume!"]
 
 
     # and we have what we expected
