@@ -1,6 +1,6 @@
 ### Elixir Hello, World!
+![helloworld](https://github.com/user-attachments/assets/7871e34a-31bd-4961-a0e8-0666c3cf5d78)
 
-![The Idea](idea.jpeg)
 
 Truth be told, there's not really a lot you can do with this example and in a lot of ways it's not really a HelloWorld example.
 
@@ -85,6 +85,10 @@ Confirm your installed versions:
 ```bash
 elixir --version
 ```
+# The Idea
+
+I have two cats one talks a lot and the other is fairly quiet. I imagined them as robots
+![The Idea](idea.jpeg)
 
 
 [0]: https://github.com/treejamie/helloworld
